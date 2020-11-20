@@ -7,6 +7,6 @@
 - [X] [Output Management](https://webpack.js.org/guides/output-management/)
 - [X] [Development](https://webpack.js.org/guides/development/)
 - [ ] [React](https://reactjs.org/) 추가
-- [ ] [Typescript](https://www.typescriptlang.org/) 추가
+- [X] [Typescript](https://www.typescriptlang.org/) 추가
 - [ ] [Scss(Sass)](https://sass-lang.com/) 추가
 - [ ] ...
