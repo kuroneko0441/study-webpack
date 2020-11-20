@@ -3,7 +3,7 @@
 ## 목표
 
 - [X] [Getting Started](https://webpack.js.org/guides/getting-started/)
-- [ ] [Asset Management](https://webpack.js.org/guides/asset-management/)
+- [X] [Asset Management](https://webpack.js.org/guides/asset-management/)
 - [ ] [Output Management](https://webpack.js.org/guides/output-management/)
 - [ ] [Development](https://webpack.js.org/guides/development/)
 - [ ] [React](https://reactjs.org/) 추가
