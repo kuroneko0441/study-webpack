@@ -2,7 +2,7 @@
 
 ## 목표
 
-- [ ] [Getting Started](https://webpack.js.org/guides/getting-started/)
+- [X] [Getting Started](https://webpack.js.org/guides/getting-started/)
 - [ ] [Asset Management](https://webpack.js.org/guides/asset-management/)
 - [ ] [Output Management](https://webpack.js.org/guides/output-management/)
 - [ ] [Development](https://webpack.js.org/guides/development/)
