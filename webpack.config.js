@@ -30,18 +30,32 @@ const babelPlugins = {
     '@babel/plugin-transform-unicode-escapes',
     '@babel/plugin-transform-unicode-regex',
   ],
+  /**
+   * React Plugins
+   * {@link https://babeljs.io/docs/en/plugins#react}
+   */
+  react: [
+    '@babel/plugin-transform-react-constant-elements',
+    '@babel/plugin-transform-react-display-name',
+    '@babel/plugin-transform-react-inline-elements',
+    '@babel/plugin-transform-react-jsx',
+    '@babel/plugin-transform-react-jsx-compat',
+    '@babel/plugin-transform-react-jsx-self',
+    '@babel/plugin-transform-react-jsx-source',
+  ],
 };
 
 const babelOptions = {
   plugins: [
     ...babelPlugins.es2015,
+    ...babelPlugins.react,
   ],
 };
 
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.ts',
+    index: './src/index.tsx',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -68,6 +82,7 @@ module.exports = {
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: 'Development',
+      templateContent: `<div id="root"></div>`
     }),
   ],
   output: {
@@ -78,6 +93,9 @@ module.exports = {
   resolve: {
     extensions: [
       '.ts',
+      '.tsx',
+      '.js',
+      '.jsx',
     ],
   },
 };
