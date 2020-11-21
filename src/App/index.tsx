@@ -1,27 +1,28 @@
-import { printMe } from 'print';
+import { Action } from '@reduxjs/toolkit';
+import { counterSlice } from 'features';
 import * as React from 'react';
-import './style.scss';
+import { Dispatch } from 'react';
+import { connect } from 'react-redux';
+import { RootStore } from 'store';
+import './app.scss';
 
-interface Props {
+type Props = {
   name?: string;
-}
+} & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>;
 
 interface State {
-  clickCount: number;
   visibility: boolean;
 }
 
-export class App extends React.Component<Props, State> {
+class _App extends React.Component<Props, State> {
 
   public constructor(props: Props) {
     super(props);
 
     this.state = {
-      clickCount: 0,
-      visibility: false,
+      visibility: true,
     };
 
-    this.onClick = this.onClick.bind(this);
     this.toggleVisibility = this.toggleVisibility.bind(this);
   }
 
@@ -32,10 +33,10 @@ export class App extends React.Component<Props, State> {
         {
           this.state.visibility && (
             <div>
-              <button onClick={this.onClick}>Click here!</button>
+              <button onClick={this.props.click}>Click here!</button>
               {
-                Array.from({ length: this.state.clickCount })
-                  .map((_, i) => <div key={i}>Clicked {this.state.clickCount} times!</div>)
+                Array.from({ length: this.props.clickCount })
+                  .map((_, i) => <div key={i}>Clicked {i} times!</div>)
               }
             </div>
           )
@@ -45,14 +46,6 @@ export class App extends React.Component<Props, State> {
     );
   }
 
-  private onClick(): void {
-    printMe();
-    this.setState({
-      ...this.state,
-      clickCount: this.state.clickCount + 1,
-    });
-  }
-
   private toggleVisibility(): void {
     this.setState({
       ...this.state,
@@ -60,3 +53,19 @@ export class App extends React.Component<Props, State> {
     });
   }
 }
+
+function mapStateToProps(state: RootStore) {
+  return {
+    clickCount: state.counter.click,
+  };
+}
+
+function mapDispatchToProps(dispatch: Dispatch<Action>) {
+  return {
+    click() {
+      dispatch(counterSlice.actions.countClick());
+    },
+  };
+}
+
+export const App = connect(mapStateToProps, mapDispatchToProps)(_App);

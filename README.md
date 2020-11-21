@@ -36,9 +36,9 @@
 - [X] [React](https://reactjs.org/) 추가
 - [X] .tsx => .jsx 트랜스파일
 - [X] .jsx => .js 트랜스파일
+- [X] Redux 추가
 
 ### Sass
 
 - [X] css 추가
 - [X] [Scss(Sass)](https://sass-lang.com/) 추가
-- [ ] ...
