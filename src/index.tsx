@@ -1,9 +1,7 @@
-import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { printMe } from './print';
-import './style.scss';
+import { App } from './App';
 
 ReactDOM.render(
-  <h1 onClick={printMe}>Hello, world!</h1>,
+  <App />,
   document.getElementById('root'),
 );
