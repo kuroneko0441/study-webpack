@@ -40,5 +40,5 @@
 ### Sass
 
 - [X] css 추가
-- [ ] [Scss(Sass)](https://sass-lang.com/) 추가
+- [X] [Scss(Sass)](https://sass-lang.com/) 추가
 - [ ] ...
