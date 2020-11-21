@@ -1,8 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { printMe } from './print';
-import './style.css';
-import './style.sass';
 import './style.scss';
 
 ReactDOM.render(
